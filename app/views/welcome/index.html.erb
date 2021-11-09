@@ -1,2 +1,22 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col"><img src="https://img.icons8.com/wired/24/000000/numbered-list.png"></th>
+			<th scope="col">Project Title</th>
+			<th scope="col">category Name</th>
+			<th scope="col">User Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @projects.each_with_index do |project,index| %>
+		<tr>
+			<th scope="row"><%=index+1%></th>
+			<td><%= project.title%></td>
+			<td><%= project.category.name %></td>
+			<td><%= project.user.username %></td>
+		</tr>
+		<%end%>
+	</tbody>
+</table>
+<%= will_paginate @projects %>
