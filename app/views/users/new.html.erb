@@ -1,0 +1,20 @@
+<div class="login-wrap">
+	<div class="login-html">
+		<div class="login-form">
+			<%= bootstrap_form_for @user, :as => :user, :url => users_path do |f| %>
+			<div class="sign-in-htm">
+				<div class="group">
+					<%= f.text_field :username, class: "input", required: true %>
+				</div>
+				<div class="group">
+					<%= f.password_field :password, class: "input", required: true %>
+				</div>
+				<div class="group">
+					<%= f.submit 'Submit' , :class => "button" %>
+				</div>
+				<div class="hr"></div>
+			</div>
+			<%end%>	
+		</div>
+	</div>
+</div>
